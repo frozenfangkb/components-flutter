@@ -10,7 +10,13 @@ class CardPage extends StatelessWidget {
         title: Text('Cards'),
       ),
       body: ListView(
-        children: <Widget>[_cardTipo1()],
+        children: <Widget>[
+          _cardTipo1(),
+          SizedBox(
+            height: 30,
+          ),
+          _cardTipo2()
+        ],
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       ),
     );
@@ -32,6 +38,27 @@ class CardPage extends StatelessWidget {
               TextButton(onPressed: () {}, child: Text('Cancelar')),
             ],
             mainAxisAlignment: MainAxisAlignment.end,
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: [
+          FadeInImage(
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage(
+                'https://www.theolivepress.es/wp-content/uploads/2019/02/High-frontier.jpg'),
+            fadeInDuration: Duration(milliseconds: 250),
+            height: 250,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            child: Text('Esto es un texto de una imagen'),
+            padding: EdgeInsets.all(10),
           )
         ],
       ),
