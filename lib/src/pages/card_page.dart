@@ -17,13 +17,15 @@ class CardPage extends StatelessWidget {
           ),
           _cardTipo2()
         ],
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       ),
     );
   }
 
   Widget _cardTipo1() {
     return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -46,6 +48,9 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo2() {
     return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      elevation: 5,
       child: Column(
         children: [
           FadeInImage(
